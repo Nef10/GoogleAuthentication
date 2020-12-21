@@ -14,13 +14,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest, ubuntu-latest]
+        os: [macOS-latest]
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Install Swift
       uses: fwal/setup-swift@v1.5.0
-    - name: Run tests
+    - name: Build
       run: swift build
   swiftlint:
     name: SwiftLint
