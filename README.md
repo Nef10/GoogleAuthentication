@@ -13,5 +13,5 @@ You can check out the documentation [here](https://nef10.github.io/GoogleAuthent
 This package support the Swift Package Manager, so simply add a dependency in your Package.swift:
 
 ```
-.package(url: "https://github.com/Nef10/SwiftBeanCountImporter.git", .upToNextMajor(from: "1.0.2")),
+.package(url: "https://github.com/Nef10/SwiftBeanCountImporter.git", .upToNextMajor(from: "1.0.1")),
 ```
