@@ -6,6 +6,7 @@
 //  Copyright © 2020 Steffen Kötte. All rights reserved.
 //
 
+import AuthenticationServices
 import Foundation
 import KeychainAccess
 import OAuthSwift
@@ -52,14 +53,19 @@ public class Authentication {
     /// If the keychain has a token saved it retreives this and returns without calling Google.
     /// After successful authentication the tokens are saved in the keychain
     ///
-    /// - Parameter completion: OAuthSwift.TokenCompletionHandler
-    public func authenticate(completion: @escaping OAuthSwift.TokenCompletionHandler) {
+    /// - Parameter
+    ///   - authenticationPresentationContextProvider: ASWebAuthenticationPresentationContextProviding for ASWebAuthenticationSession to show a dialog on if needed
+    ///   - completion: OAuthSwift.TokenCompletionHandler
+    public func authenticate(
+        authenticationPresentationContextProvider: ASWebAuthenticationPresentationContextProviding,
+        completion: @escaping OAuthSwift.TokenCompletionHandler
+    ) {
         if retreiveAndApplyCredentials() {
             completion(.success((oAuth.client.credential, nil, [:])))
             return
         }
 
-        let handler = ASWebAuthenticationURLHandler(callbackURLScheme: redirectURI, authenticationPresentationContextProvider: AuthenticationPresentationContextProvider())
+        let handler = ASWebAuthenticationURLHandler(callbackURLScheme: redirectURI, authenticationPresentationContextProvider: authenticationPresentationContextProvider)
         oAuth.authorizeURLHandler = handler
 
         _ = oAuth.authorize(withCallbackURL: URL(string: "\(redirectURI):/oauth2Callback")!, scope: scope, state: "") { result in
