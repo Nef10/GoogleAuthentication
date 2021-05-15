@@ -26,5 +26,8 @@ let package = Package(
         .target(
             name: "GoogleAuthentication",
             dependencies: ["OAuthSwift", "KeychainAccess"]),
+        .testTarget(
+            name: "GoogleAuthenticationTests",
+            dependencies: ["GoogleAuthentication"]),
     ]
 )
