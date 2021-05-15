@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/OAuthSwift/OAuthSwift.git",
-            .upToNextMajor(from: "2.1.2")
+            .revision("3436c73fbfd35054b2262c0e21c6627f1d810cf4")
         ),
         .package(
             url: "https://github.com/kishikawakatsumi/KeychainAccess.git",
