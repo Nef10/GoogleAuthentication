@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess.git",
         "state": {
           "branch": null,
-          "revision": "654d52d30f3dd4592e944c3e0bccb53178c992f6",
-          "version": "4.2.1"
+          "revision": "84e546727d66f1adc5439debad16270d0fdd04e7",
+          "version": "4.2.2"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/OAuthSwift/OAuthSwift.git",
         "state": {
           "branch": null,
-          "revision": "3436c73fbfd35054b2262c0e21c6627f1d810cf4",
-          "version": null
+          "revision": "d85964b96dbce94df961f28b996187c835089903",
+          "version": "2.2.0"
         }
       },
       {
