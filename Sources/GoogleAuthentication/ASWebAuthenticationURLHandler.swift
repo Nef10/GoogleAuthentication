@@ -23,7 +23,7 @@ class ASWebAuthenticationURLHandler: OAuthSwiftURLHandlerType {
 
     public func handle(_ url: URL) {
         webAuthSession = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackURLScheme) { callback, error in
-            guard let callback = callback else {
+            guard let callback else {
                 let message = error?.localizedDescription.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
                 let urlString = "\(self.callbackURLScheme)?error=\(message ?? "Unknown")"
                 guard let url = URL(string: urlString) else {
