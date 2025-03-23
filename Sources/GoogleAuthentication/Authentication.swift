@@ -109,7 +109,7 @@ public class Authentication {
     private func retreiveAndApplyCredentials() -> Bool {
         if let credentialData = keychain[data: Self.keychainKey] {
             do {
-                if let credential = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(credentialData) as? OAuthSwiftCredential {
+                if let credential = try NSKeyedUnarchiver.unarchivedObject(ofClass: OAuthSwiftCredential.self, from: credentialData) {
                     oAuth.client.credential.oauthToken = credential.oauthToken
                     oAuth.client.credential.oauthRefreshToken = credential.oauthRefreshToken
                     oAuth.client.credential.oauthTokenSecret = credential.oauthTokenSecret
