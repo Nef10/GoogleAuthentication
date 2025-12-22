@@ -6,6 +6,7 @@ let package = Package(
     name: "GoogleAuthentication",
     platforms: [
         .macOS(.v10_15),
+        .iOS(.v13),
     ],
     products: [
         .library(
